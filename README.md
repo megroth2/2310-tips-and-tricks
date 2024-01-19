@@ -1,7 +1,7 @@
 # 2310-tips-and-tricks
 Developed by the 2310 Cohort in January 2024 after completing Mod 2. Includes various tips and tricks relevant to ruby, rails, rspec, and vs code.
 
-=======================================================================================================
+===========================================================================
 
 ## Table of contents:
 1. The .zshrc file
@@ -13,7 +13,7 @@ Developed by the 2310 Cohort in January 2024 after completing Mod 2. Includes va
 1. Misc Tips
 
 
-=======================================================================================================
+===========================================================================
 
 
 ## The .zshrc file
@@ -61,7 +61,7 @@ Within the .zshrc file, optionally add these lines of code to set up aliases. Re
   - example: `nra little_shop` (@LOGAN - please confirm this is correct)
 
 
-=======================================================================================================
+===========================================================================
 
 ## Snippets:
 - .code-snippet files live in the vs code editor
@@ -92,12 +92,12 @@ Examples:
 - [pry.code-snippets]() @YAIN to share example
 - [erb.code-snippets]() @YAIN to share example
 
-=======================================================================================================
+===========================================================================
 
 ## Rails Joins Table Guide
 - Stephen Nash's [rails-joins-table-guide.md]() @MEG to add link
 
-=======================================================================================================
+===========================================================================
 
 ## VS Code extensions:
 ### Tabnine
@@ -107,7 +107,7 @@ Examples:
 - sometimes it is wrong
 - confirmed by instructors that use of this extension at Turing is not cheating!
 
-=======================================================================================================
+===========================================================================
 
 ## Gems:
 ### lolcat
@@ -115,7 +115,7 @@ Examples:
 - https://rubygems.org/gems/lolcat/versions/42.24.0?locale=en
 - add `gem 'lolcat'` to your gemfile and run `bundle install`
 
-=======================================================================================================
+===========================================================================
 
 ## Misc VS Code Commands:
 - `command b` - collapse/open left menu bar in vs code
@@ -124,7 +124,7 @@ Examples:
 - `command p` = @YAIN what does this do again?
 - `command w` = @YAIN what does this do again?
 
-=======================================================================================================
+===========================================================================
 
 ## Misc Tips:
 - Open two terminals at once - one can have `rails s` running and you can use the other one for running tests, adding commits, etc.
