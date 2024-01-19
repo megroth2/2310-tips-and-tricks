@@ -2,6 +2,174 @@
 // The place this file lives is in your: 
 // Users/homename/Library/ApplicationSupport/Code/User/snippets folder
 
+"Save and Open Page": {
+		"scope": "ruby",
+		"prefix": "sav",
+		"body": [
+			"save_and_open_page"
+		],
+		"description": "Insert a save and open page command"
+	},
+	"Rspecmod": {
+		"scope": "ruby",
+		"prefix": "rspecmod",
+		"body": [
+			"require 'rails_helper'\n\nRSpec.describe $1, type: :model do\n	describe 'validations' do\n		it { should validate_presence_of :$2}\n	end\n\n	describe 'relationships' do\n		it {should belong_to :$3}\n		it {should have_many :$4}\n	end\n\n	describe 'instance methods' do\n	end\nend"
+		],
+		"description": "Insert rspec skeleton"
+	},
+	"Rspecfeat": {
+		"scope": "ruby",
+		"prefix": "rspecfeat",
+		"body": [
+			"require 'rails_helper'\n\nRSpec.describe '$1', type: :feature do\n	describe '$2' do\n		before(:each) do\n$3\n		end\n\n		it '$4' do\n		end\n	end\nend"
+		],
+		"description": "Insert rspec skeleton"
+	},
+	"Expage": {
+		"scope": "ruby",
+		"prefix": "expage",
+		"body": [
+			"expect(page).to have_content($1)"
+		],
+		"description": "Insert capybara expect page to have content"
+	},
+	"Exlink": {
+		"scope": "ruby",
+		"prefix": "exlink",
+		"body": [
+			"expect(page).to have_link($1)"
+		],
+		"description": "Insert capybara expect current path to equal"
+	},
+	"Expath": {
+		"scope": "ruby",
+		"prefix": "expath",
+		"body": [
+			"expect(current_path).to eq($1)"
+		],
+		"description": "Insert capybara expect current path to equal"
+	},
+	"Test Gems": {
+		"scope": "ruby, gemfile",
+		"prefix": "gemmy",
+		"body": [
+			"gem 'rspec-rails'\ngem 'simplecov'\ngem 'pry'\ngem 'shoulda-matchers'\ngem 'capybara'\ngem 'factory_bot_rails'\ngem 'faker'\ngem 'launchy'\ngem 'orderly'\ngem 'vcr'\ngem 'webmock'"
+		]
+	},
+	"Within class": {
+		"scope": "ruby",
+		"prefix": "wic",
+		"body": [
+			"within '.$1' do\n	$3\nend"
+		]
+	},
+	"Within id": {
+		"scope": "ruby",
+		"prefix": "wid",
+		"description": "single quotes have to be turned to doubles",
+		"body": [
+			"within '#$1-#{$2.id}' do\n	$3\nend"
+		]
+	},
+	"Check Hash Structure": {
+		"scope": "ruby",
+		"prefix": "chk-hsh",
+		"body": [
+			"def check_hash_structure(object, key, data_type)\n	expect(object).to have_key(key)\n	expect(object[key]).to be_a(data_type)\nend"
+		]
+	},
+	// test html
+	"unless": {
+		"prefix": "unless",
+		"body": "\n<% unless $1 %>\n\t$0\n<% end %>\n",
+		"description": "ERB unless / end"
+		// "scope": "text.html.ruby"
+	}, 
+	"Fill In Form": {
+		"scope": "ruby",
+		"prefix": "fif",
+		"body": [
+			"fill_in $1, with: $2"
+		]
+	},
+	"has_many": {
+		"scope": "ruby",
+		"prefix": "has_many",
+		"body": [
+			"has_many :$1, dependent: :destroy"
+		]
+	},
+	"has_many_through": {
+		"scope": "ruby",
+		"prefix": "has_many_through",
+		"body": [
+			"has_many :$1, through: :$2"
+		]
+	},
+	"validates_presence_of": {
+		"scope": "ruby",
+		"prefix": "val",
+		"body": [
+			"validates_presence_of :$1,\n\t\t\t\t\t\t\t\t\t\t\t$2"
+		]
+	},
+	"index": {
+		"scope": "ruby",
+		"prefix": "index",
+		"body": [
+		"def index\n\t@$1s = $1.all\nend"
+		]
+	},
+	"new_validates_presence": {
+		"scope": "ruby",
+		"prefix": "val_2",
+		"body": [
+		"validates :$1, presence: true"
+		]
+	},
+	"belongs_to": {
+		"scope": "ruby",
+		"prefix": "belongs_to",
+		"body": [
+		"belongs_to :$1"
+		]
+	},
+	"flash_alert": {
+		"scope": "ruby",
+		"prefix": "flash",
+		"body": [
+		"flash[:alert] = '$1'"
+		]
+	},
+	"it { should have_many(:$1).through(:$2) }": {
+		"scope": "ruby",
+		"prefix": "it should have many though",
+		"body": [
+		"it { should have_many(:$1).through(:$2) }"
+		]
+	},
+	"it { should belong_to :$1 }": {
+		"scope": "ruby",
+		"prefix": "it should belong to",
+		"body": [
+		"it { should belong_to :$1 }"
+		]
+	},
+	"it { should have_many :$1 }": {
+		"scope": "ruby",
+		"prefix": "it should have many",
+		"body": [
+		"it { should have_many :$1 }"
+		]
+	},
+	"it { should validate_presence_of(:status) }": {
+		"scope": "ruby",
+		"prefix": "it should validate presense of",
+		"body": [
+		"it { should validate_presence_of(:$1) }"
+		]
+	},
 {
   "Pry Snippet": {
       "scope": "ruby",
@@ -23,4 +191,3 @@
       "prefix": "gemfiles",
       "body": "gem \"pry\"\ngem \"rspec-rails\"\ngem \"simplecov\"\ngem \"capybara\"\ngem \"launchy\"\ngem \"orderly\"\ngem \"shoulda-matchers\", \"~> 5.0\""
   }
-}

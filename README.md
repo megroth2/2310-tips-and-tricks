@@ -87,9 +87,10 @@ Snippet Example:
 - continue adding more snippets by adding commas in between
 
 Examples:
-- [ruby.code-snippets]() @LOGAN to share examples
-- [rspec.code-snippets]() 
-- [erb.code-snippets]() 
+- [ruby.code-snippets](ruby.code-snippets)
+- [rspec.code-snippets](rspec.code-snippets)
+- [erb.code-snippets](erb.code-snippets)
+- [.pryrc](.pryrc)
 
 ===========================================================================
 
