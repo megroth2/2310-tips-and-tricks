@@ -1,6 +1,6 @@
 // These are code snippets for your testing files, you can write your own custom snippets following the same convention as below. 
-// The scope of these files are limited to just html documents. The place this file lives is in your 
-// Users/homename/Library/ApplicationSupport/Code/User/snippets 
+// The place this file lives is in your:
+// Users/homename/Library/ApplicationSupport/Code/User/snippets folder
 
 {
 	"Rails Expect Page To Have Content Snippet": {
