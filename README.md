@@ -121,8 +121,9 @@ Examples:
 - `command b` - collapse/open left menu bar in vs code
 - `command shift f` - opens search in the left hand navigation bar in vs code
   - _adding shift applies the command to the whole app, whereas just command f will apply to the page you're currently on_
-- `command p` = @YAIN what does this do again?
-- `command w` = @YAIN what does this do again?
+- `command p` = quickly open files from your explorer
+- `command w` = quickly close current tab
+- `command 1, 2, or 3` = opens up more panels, must have 1 to do 2, 2 to do 3, etc.
 
 [VS Code Shortcuts & Commands](VSCode-Keyboard-Shortcuts.pdf)
 
