@@ -1,0 +1,26 @@
+// These are code snippets for erb, you can write your own custom snippets following the same convention as below. 
+// The place this file lives is in your: 
+// Users/homename/Library/ApplicationSupport/Code/User/snippets folder
+
+{
+  "Pry Snippet": {
+      "scope": "ruby",
+      "prefix": "pry",
+      "body": [
+          "require 'pry'; binding.pry",
+      ],
+      "description": "Add pry binding for ruby" 
+  },
+  // This starts SimpleCov for you
+  "simple cov": {
+      "scope": "ruby",
+      "prefix": "simplecov",
+      "body": "require 'simplecov' \nSimpleCov.start"
+  },
+  // This is mostly for when you are generating a new rails application to make sure it has the gems that you want
+  "Gemfiles": {
+      "scope": "ruby",
+      "prefix": "gemfiles",
+      "body": "gem \"pry\"\ngem \"rspec-rails\"\ngem \"simplecov\"\ngem \"capybara\"\ngem \"launchy\"\ngem \"orderly\"\ngem \"shoulda-matchers\", \"~> 5.0\""
+  }
+}
