@@ -1,0 +1,270 @@
+// These are code snippets for erb, you can write your own custom snippets following the same convention as below. 
+// The scope of these files are limited to just html documents. The place this file lives is in your 
+// Users/homename/Library/ApplicationSupport/Code/User/snippets 
+
+{
+  "ruby-expression(<% %>)": {
+    "scope": "html",
+    "prefix": "pre",
+    "body": "<% $1 %>$0"
+  },
+  "ruby-expression-block(<% %>)": {
+    "scope": "html",
+    "prefix": "preb",
+    "body": "<% $1 %>\n\t$0\n<% end %>"
+  },
+  "ruby-expression(<%= %>)": {
+    "scope": "html",
+    "prefix": "pe",
+    "body": "<%= $1 %>"
+  },
+  "ruby-expression-block(<%= %>)": {
+    "scope": "html",
+    "prefix": "peb",
+    "body": "<%= $1 %>\n\t$0\n<% end %>"
+  },
+  "each": {
+    "scope": "html",
+    "prefix": "each",
+    "body": [
+      "<% ${1:items}.each do |${2:item}| %>",
+      "\t$3",
+      "<% end %>"
+    ]
+  },
+  "time_zone_select": {
+    "scope": "html",
+    "prefix": "timezone",
+    "body": "<%= f.time_zone_select :${1:column_name} %>"
+  },
+  "range_field": {
+    "scope": "html",
+    "prefix": "rangefield",
+    "body": "<%= range_field (:${1:model_name}, :${2:column_name}, in: ${3:1..100}) %>"
+  },
+  "select_tag": {
+    "scope": "html",
+    "prefix": "selecttag",
+    "body": "<%= select_tag (:${1:id_name}, options_for_select(${2:options})) %>"
+  },
+  "color_field": {
+    "scope": "html",
+    "prefix": "colorfield",
+    "body": "<%= color_field :${$1:id_name} %>"
+  },
+  "options_for_select": {
+    "scope": "html",
+    "prefix": "options_for_select",
+    "body": "options_for_select([${1:options}])$0"
+  },
+  "render": {
+    "scope": "html",
+    "prefix": "render",
+    "body": "<%= render ${1:path} %>$0"
+  },
+  "render_variable": {
+    "scope": "html",
+    "prefix": "rendervar",
+    "body": "<%= render ${1:path}, ${2:variable1}: ${3:variable2} %>"
+  },
+  "link_to": {
+    "scope": "html",
+    "prefix": "lt",
+    "body": "<%= link_to '${1:text}', ${2:path} %>"
+  },
+  "link_to class": {
+    "scope": "html",
+    "prefix": "ltc",
+    "body": "<%= link_to '${1:text}', ${2:path}, class:'${3:class}' %>"
+  },
+  "link_to, method, data": {
+    "scope": "html",
+    "prefix": "ltmd",
+    "body": "<%= link_to '${1:link_text}', ${2:path}, method: '${3:method}', data:{ ${4:data} } %>"
+  },
+  "link_to, method, data, class": {
+    "scope": "html",
+    "prefix": "ltmdc",
+    "body": "<%= link_to '${1:link_text}', ${2:path}, method: '${3:method}', data:{ ${4:data} }, class:'${5:class}' %>"
+  },
+  "link_to, method, confirm": {
+    "scope": "html",
+    "prefix": "ltmcon",
+    "body": "<%= link_to \"${1:link_text}\", ${2:path}, method: \"${3:method}\", data:{ confirm: \"${4:confirm}\"} %>"
+  },
+  "link_to, method, confirm, class": {
+    "scope": "html",
+    "prefix": "ltmconc",
+    "body": "<%= link_to \"${1:link_text}\", ${2:path}, method: \"${3:method}\", data:{ confirm: \"${4:confirm}\"}, class:\"${5:class}\" %>"
+  },
+  "submit": {
+    "scope": "html",
+    "prefix": "submit",
+    "body": "<%= f.submit %>$0"
+  },
+  "label": {
+    "scope": "html",
+    "prefix": "label",
+    "body": "<%= f.label :${1:id_name}, '${2:text}' %>"
+  },
+  "number_field": {
+    "scope": "html",
+    "prefix": "numberfield",
+    "body": "<%= f.number_field (:${1:id_name}, in: ${2:1.0..20.0}, step: ${3:0.5}) %>"
+  },
+  "time_field": {
+    "scope": "html",
+    "prefix": "timefield",
+    "body": "<%= f.time_field :${1:id_name} %>"
+  },
+  "hidden_field": {
+    "scope": "html",
+    "prefix": "hiddenfield",
+    "body": "<%= f.hidden_field :${1:id_name} %>"
+  },
+  "email_field": {
+    "scope": "html",
+    "prefix": "emailfield",
+    "body": "<%= f.email_field :${1:id_name} %>"
+  },
+  "url_field": {
+    "scope": "html",
+    "prefix": "urlfield",
+    "body": "<%= f.url_field :${1:id_name} %>"
+  },
+  "password_field": {
+    "scope": "html",
+    "prefix": "passwordfield",
+    "body": "<%= f.password_field :${1:id_name} %>"
+  },
+  "text_area": {
+    "scope": "html",
+    "prefix": "textarea",
+    "body": "<%= f.text_area :${1:id_name} %>"
+  },
+  "check_box": {
+    "scope": "html",
+    "prefix": "checkbox",
+    "body": "<%= f.check_box :${1:id_name} %>"
+  },
+  "text_field": {
+    "scope": "html",
+    "prefix": "textfield",
+    "body":"<%= f.text_field :${1:id_name} %>"
+  },
+  "date_field": {
+    "scope": "html",
+    "prefix": "datefield",
+    "body": "<%= f.date_field :${1:id_name} %>"
+  },
+  "datetime_field": {
+    "scope": "html",
+    "prefix": "datetimefield",
+    "body": "<%= f.datetime_field :${1:id_name} %>"
+  },
+  "radio_button": {
+    "scope": "html",
+    "prefix": "radiobutton",
+    "body": "<%= f.radio_button :${1:name}, :value => '${2:value}' %>"
+  },
+  "input": {
+    "scope": "html",
+    "prefix": "input",
+    "body": "<%= f.input :${1:id}, label: '${2:text}' %>"
+  },
+  "path": {
+    "scope": "html",
+    "prefix": "path",
+    "body": "${1:path}_path"
+  },
+  "new_path": {
+    "scope": "html",
+    "prefix": "newpath",
+    "body": "new_${1:path}_path"
+  },
+  "edit_path": {
+    "scope": "html",
+    "prefix": "editpath",
+    "body": "edit_${1:path}_path(${2:variable})"
+  },
+  "if": {
+    "scope": "html",
+    "prefix": "if",
+    "body": "<% if $1 %>\n\t$2\n<% end %>"
+  },
+  "else": {
+    "scope": "html",
+    "prefix": "else",
+    "body": "<% else %>"
+  },
+  "elsif": {
+    "scope": "html",
+    "prefix": "elsif",
+    "body": "<% elsif $1 %>$0"
+  },
+  "if else": {
+    "scope": "html",
+    "prefix": "ifelse",
+    "body": [
+      "<% if $1 %>",
+      "\t$2",
+      "<% else %>",  
+      "\t$3",
+      "<% end %>"
+    ]
+  },
+  "if elsif": {
+    "scope": "html",
+    "prefix": "if elsif",
+    "body": [
+      "<% if $1 %>",
+      "\t$2",
+      "<% elseif %>",
+      "\t$3",
+      "<% end %>"
+    ]
+  },
+  "if elsif else": {
+    "scope": "html",
+    "prefix": "if elsif else",
+    "body": [
+      "<% if $1 %>",
+      "\t$2",
+      "<% elseif %>",
+      "\t$3",
+      "<% else %>",
+      "\t$4",
+      "<% end %>"
+    ]
+  },
+  "unless": {
+    "scope": "html",
+    "prefix": "unless",
+    "body": [
+      "<% unless ${1:falsevalue} %>",
+      "\t$2",
+      "<% end %>"
+    ]
+  },
+  "unlessElse": {
+    "scope": "html",
+    "prefix": "unless else",
+    "body": [
+      "<% unless ${1:falsevalue} %>",
+      "\t$2",
+      "<% else %>",
+      "\t$3",
+      "<% end %>"
+    ]
+  },
+  "Form Post": {
+    "scope": "html",
+    "prefix": "formpost",
+    "body": "<%= form_with url: \"/$1\", method: :$2, data: { turbo: false } do |f| %> \n\n  <%= f.submit \"Submit\" %>\n<% end %>"
+},
+  "%end": {
+    "scope": "html",
+    "prefix": "%end",
+    "body": "<% end %>"
+  }
+}

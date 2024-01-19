@@ -1,0 +1,82 @@
+// These are code snippets for your testing files, you can write your own custom snippets following the same convention as below. 
+// The scope of these files are limited to just html documents. The place this file lives is in your 
+// Users/homename/Library/ApplicationSupport/Code/User/snippets 
+
+{
+	"Rails Expect Page To Have Content Snippet": {
+		"scope": "ruby",
+		"prefix": "page",
+		"body": [
+				"expect(page).to have_content($1)"
+		],
+		"description": "RSpec shortcut for page content"
+	},
+	"Rails Expect Page Current Path Snippet": {
+		"scope": "ruby",
+		"prefix": "current path",
+		"body": [
+				"expect(page.current_path).to eq($1)"
+		],
+		"description": "RSpec shortcut for page content"
+	},
+	"Capybara Before Snippet": {
+		"scope": "ruby",
+		"prefix": "before",
+		"body": [
+				"expect($1).to appear_before($2)"
+		]
+	},
+	"Capybara Has Link Snippet": {
+		"scope": "ruby",
+		"prefix": "has_link",
+		"body": [
+			"expect(page).to have_link($1)"
+		]
+	},    
+	"Capybara Has Button Snippet": {
+		"scope": "ruby",
+		"prefix": "hb",
+		"body": [
+			"expect(page).to have_button($1)"
+		]
+	},
+	"Capybara Has Link Snippet": {
+		"scope": "ruby",
+		"prefix": "has_link",
+		"body": [
+			"expect(page).to have_link($1)"
+			]
+	},
+	"Require Rails Helper": {
+		"scope": "ruby",
+		"prefix": "req rails",
+		"body": [
+			"require \"rails_helper\""
+			]
+	},
+	"RSpec expect": {
+		"scope": "ruby",
+		"prefix": "expect",
+		"body": "expect($1).to eq($2)"
+	},
+	"Before Each": {
+		"prefix": "beach",
+		"body": "before(:each) do \n$1\nend"
+	},
+	"Within": {
+		"scope": "ruby",
+		"prefix": "within",
+		"body": "within \"#$1-#{@$2.id}\" do \n$3\nend "
+	},
+	"It-block": {
+		"scope": "ruby",
+		"prefix": "it",
+		"body": "it \"$1\" do \n$2\nend"
+	},
+	"Save and open page with application test": {
+		"scope": "ruby",
+		"prefix": "open",
+		"body": ["save_and_open_page"],
+		"description": "launchy"
+  }
+}
