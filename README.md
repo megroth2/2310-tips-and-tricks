@@ -88,9 +88,9 @@ Snippet Example:
 
 Examples:
 - [ruby.code-snippets](ruby.code-snippets)
-- [rspec.code-snippets]() @YAIN to share example
-- [pry.code-snippets]() @YAIN to share example
-- [erb.code-snippets]() @YAIN to share example
+- [rspec.code-snippets](rspec.code-snippets)
+- [erb.code-snippets](erb.code-snippets)
+- [.pryrc](.pryrc)
 
 ===========================================================================
 
