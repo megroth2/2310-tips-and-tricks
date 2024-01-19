@@ -124,7 +124,7 @@ Examples:
 - `command p` = @YAIN what does this do again?
 - `command w` = @YAIN what does this do again?
 
-![VS Code Shortcuts & Commands](VSCode-Keyboard-Shortcuts.pdf)
+![VS Code Shortcuts & Commands](VSCode-Keyboard-Shortcuts.png)
 
 ===========================================================================
 
