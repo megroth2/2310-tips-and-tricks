@@ -8,13 +8,13 @@ This is a living shared document - have something to add or correct? Feel free t
 ===========================================================================
 
 ## Table of contents:
-1. The .zshrc file
-1. Snippets
-1. Rails Joins Table Guide
-1. VS Code Extensions
-1. Gems
-1. Misc VS Code Commands
-1. Misc Tips
+1. [The .zshrc file](#the-zshrc-file)
+1. [Snippets](#Snippets)
+1. [Rails Joins Table Guide](#Rails-Joins-Table-Guide)
+1. [VS Code Extensions](#VS-Code-Extensions)
+1. [Gems](#Gems)
+1. [Misc VS Code Commands](#Misc-VS-Code-Commands)
+1. [Misc Tips](#Misc-Tips)
 
 
 ===========================================================================
@@ -67,7 +67,7 @@ Within the .zshrc file, optionally add these lines of code to set up aliases. Re
 
 ===========================================================================
 
-## Snippets:
+## Snippets
 - .code-snippet files live in the vs code editor
 - to access from vs code: `command shift p`, search "snippets", select `ruby.code-snippets` file in the search results
 - To create a new snippet:
@@ -103,7 +103,7 @@ Examples:
 
 ===========================================================================
 
-## VS Code extensions:
+## VS Code Extensions
 ### Tabnine
 - https://www.tabnine.com/
 - use this to write tests faster
@@ -113,7 +113,7 @@ Examples:
 
 ===========================================================================
 
-## Gems:
+## Gems
 ### lolcat
 - adds rainbow gradient colors to the output in the terminal (purely aesthetic)
 - https://rubygems.org/gems/lolcat/versions/42.24.0?locale=en
@@ -121,7 +121,7 @@ Examples:
 
 ===========================================================================
 
-## Misc VS Code Commands:
+## Misc VS Code Commands
 - `command b` - collapse/open left menu bar in vs code
 - `command shift f` - opens search in the left hand navigation bar in vs code
   - _adding shift applies the command to the whole app, whereas just command f will apply to the page you're currently on_
@@ -133,7 +133,7 @@ Examples:
 
 ===========================================================================
 
-## Misc Tips:
+## Misc Tips
 - Open two terminals at once - one can have `rails s` running and you can use the other one for running tests, adding commits, etc.
   - In the top right corner of your vs code terminal, select the `+` icon
   - _note: you have to select the trash can to close these windows - simply exiting out doesn't work_
