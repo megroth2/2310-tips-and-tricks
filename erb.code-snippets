@@ -1,4 +1,6 @@
-// These are code snippets for erb, you can write your own custom snippets following the same convention as below. The scope of these files are limited to just html documents.
+// These are code snippets for erb, you can write your own custom snippets following the same convention as below. 
+// The scope of these files are limited to just html documents. The place this file lives is in your 
+// Users/homename/Library/ApplicationSupport/Code/User/snippets 
 
 {
   "ruby-expression(<% %>)": {
