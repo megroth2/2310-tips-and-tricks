@@ -95,7 +95,7 @@ Examples:
 ===========================================================================
 
 ## Rails Joins Table Guide
-- Stephen Nash's [rails-joins-table-guide.md]() @MEG to add link
+- [Rails Joins Table Guide.md](rails-joins-table-guide.md) (developed by [Stephen Nash](https://github.com/s2an))
 
 ===========================================================================
 
