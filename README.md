@@ -13,8 +13,9 @@ This is a living shared document - have something to add or correct? Feel free t
 1. [VSCode Commands](#VSCode-Keyboard-Shortcuts)
 1. [VSCode Extensions](#VSCode-Extensions)
 1. [Gems](#Gems)
+1. [Common Errors](#Common-Errors)
 1. [Misc. Tips](#Misc-Tips)
-2. [Other Resources](#Other-Resources)
+1. [Other Resources](#Other-Resources)
 
 
 ===========================================================================
@@ -142,6 +143,50 @@ _note: adding shift to a shortcut applies it to the whole app, whereas shortcuts
   - adds rainbow gradient colors to the output in the terminal (purely aesthetic)
   - add `gem 'lolcat'` to your gemfile and run `bundle install`
 
+===========================================================================
+
+## Common Errors
+
+  - **The Route doesn't exist:**
+    - Error: `ActionController::RoutingError`
+    - Fix: update `config/routes.rb` with `get "/<url>", to: "<plural controller name>#<method>`
+  
+  - **Missing forward slash `/` in a URI:**
+    - Error: `No route matches [GET] "/merchants/950/merchants/950/invoices/581”`
+    - Fix: if its duplicating something in the route, that means there could be a missing leading forward slash. Check the views, controllers, etc.
+  
+  - **Missing Required Keys (when using route helpers):**
+    - Error: when we run `artist_songs_path` we get the error: `"No route matches {:action=>"index", :controller=>"Artits_songs"}, missing required keys: [:artist_id]`
+    - Fix:
+      - pass in the artist_id: `artist_songs_path(1)`
+      - or pass the whole object and rails is smart enough to pluck the id: `artist_songs_path(artist)`
+  - **The model doesn't exist:**
+    - Error: `Could not find the source association(s) "playlist" or :playlists in model PlaylistSong...`
+    - Fix: Create the model
+  - **The view doesn't exist:**
+    - Error: `ActionController::MissingExactTemplate: <A>Controller#<B> is missing a template for request formats: text/html` (the keyword here is "text/html")
+    - Fix: create a folder: `app/views/<A>` and a file: `app/views/<A>/<B>.html.erb`
+  - **The controller doesn't exist:**
+    - Error: `uninitialized constant <>Controller`
+    - Fix: create a file `app/controllers/<>_controller.rb`
+  - **The method doesn't exist:**
+    - Error: `ActionNoteFound no index action`
+    - Fix: add index method in `app/controllers/<>_controller.rb`
+  - **The database exists, but rails doesn't know which migrations have already been run (common when switching branches):**
+    - Error: `PG::UndefinedTable: ERROR:  relation "playlists" does not exist`
+    - Fix: 
+      - OK: run `rails db:drop` and then `rails db:create` (_but only if you're working locally, DON'T do this when working with deployments_)
+      - BETTER: run `rails db:migrate:status` to check the status of all migrations (and then what??)
+  - **Migration failed:**
+    - Error: `ERROR: relation "order_items" does not exist`
+    - Fix: run `rails db:migrate RAILS_ENV=test`
+    - likely means that the `rails db:migrate` command did not migrate the test database.
+  - **Another repository is already using the server (i.e. localhost:3000):**
+    - Error: When running `rails s` if it returns "address already in use"
+    - Fix:
+      - Close the terminal for that session
+      - OR run `lsof -i :3000` and `kill -9 <pid>`
+     
 ===========================================================================
 
 ## Misc. Tips
