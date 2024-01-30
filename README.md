@@ -10,7 +10,8 @@ This is a living shared document - have something to add or correct? Feel free t
 ## Table of contents:
 1. [The .zshrc File](#The-zshrc-File)
 1. [Snippets](#Snippets)
-1. [VSCode Commands](#VSCode-Keyboard-Shortcuts)
+1. [VSCode Keyboard Shortcuts](#VSCode-Keyboard-Shortcuts)
+1. [VSCode Commands](#VSCode-Commands)
 1. [VSCode Extensions](#VSCode-Extensions)
 1. [Gems](#Gems)
 1. [Common Errors](#Common-Errors)
@@ -127,6 +128,13 @@ Some of our favorites:
   - run `command 1`, `command 2`, `command 3`, etc. to quickly navigate between panels
 
 _note: adding shift to a shortcut applies it to the whole app, whereas shortcuts without shift will apply only to the current tab. For example, use `command shift F` (⇧⌘F) to find text within the whole app vs. `command f` (⌘f) to find text within the current tab._
+
+===========================================================================
+
+## VSCode Commands
+ - use `ctrl r` to search recent terminal commands
+   - in the terminal you will see `bck-i-search:`
+   - begin typing keywords to find the recent terminal command you're looking for
 
 ===========================================================================
 
