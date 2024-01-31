@@ -41,6 +41,7 @@ Within the .zshrc file, add these lines of code to set up aliases. Rename your a
 - `alias ber='bundle exec rspec'` - run tests but in a special way idk why we do this actually
 - `alias fixmigration='rails db:migrate RAILS_ENV=test'` - use this when you get the error: "relation "..." does not exist" but paste in the correct environment (test, development, etc.). This error likely means the rails db:migrate command did not migrate the database to the correct environment.
 - `alias fixschema='bin/rails db:environment:set RAILS_ENV=development'` - @STEVE what does this one do?
+- `alias cred='EDITOR="code --wait" rails credentials:edit'` - use this when setting up your rails application credentials (it opens a file where you enter your api key)
 
 ### Shell Commands:
 - #### Quickly git clone a new repo:
@@ -157,7 +158,7 @@ _note: adding shift to a shortcut applies it to the whole app, whereas shortcuts
 
   - **The Route doesn't exist:**
     - Error: `ActionController::RoutingError`
-    - Fix: update `config/routes.rb` with `get "/<url>", to: "<plural controller name>#<method>`
+    - Fix: update `config/routes.rb` with `get "/<url>", to: "<plural controller name>#<method>"`
   
   - **Missing forward slash `/` in a URI:**
     - Error: `No route matches [GET] "/merchants/950/merchants/950/invoices/581”`
