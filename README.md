@@ -8,6 +8,7 @@ This is a living shared document - have something to add or correct? Feel free t
 ===========================================================================
 
 ## Table of contents:
+Mod 2
 1. [The .zshrc File](#The-zshrc-File)
 1. [Snippets](#Snippets)
 1. [VSCode Keyboard Shortcuts](#VSCode-Keyboard-Shortcuts)
@@ -18,10 +19,12 @@ This is a living shared document - have something to add or correct? Feel free t
 1. [Misc. Tips](#Misc-Tips)
 1. [Other Resources](#Other-Resources)
 
+Mod 3
+1. [API Gems](#API-Gems)
 
 ===========================================================================
 
-
+# Mod 2
 ## The .zshrc File
   - Can't find your .zshrc file? See [Mod 0 Instructions](https://mod0.turing.edu/computer-setup#install-rbenv)
   - To open: run `code ~/.zshrc` in your terminal
@@ -208,4 +211,98 @@ _note: adding shift to a shortcut applies it to the whole app, whereas shortcuts
 
 ## Other Resources
 - [Rails Joins Table Guide.md](rails-joins-table-guide.md) (developed by [Stephen Nash](https://github.com/s2an))
+
+
+===========================================================================
+===========================================================================
+===========================================================================
+
+# Mod 3
+
+## API Gems
+### Faraday
+  - How to Install:
+    1. Add to Gemfile: `gem "faraday"` (add it to the bottom, outside of any groups)
+    1. Run `bundle install`
+  - How to use it:
+    - setup a connection using `Faraday.get('<api_url>')`
+    - the response is stored in a faraday `Response` object, so you can call it using `response.body`, `response.status`, etc.
+
+### Webmock
+  - How to Install:
+    1. Add to Gemfile: `gem "webmock"` (within the :test group)
+    1. Add to `spec_helper.rb`: `require 'webmock/rspec'` (anywhere)
+  - How to use it:
+    - error message gives you a code snippet for the stub request
+    - requires a fixture file of data
+
+### VCR
+  - webmock (or something else that blocks http requests) must be installed in order to use VCR
+  - How to Install:
+    1. Add to Gemfile: `gem "vcr"` (within the :test group)
+    2. Add to the bottom of rails_helper.rb:
+        ```ruby
+        require 'vcr'
+        VCR.configure do |config|
+          config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+          config.hook_into :webmock
+          config.configure_rspec_metadata!
+        end
+        ```
+  - How to use it:
+    - Two ways to use VCR:
+      1. Wrap the test in a `VCR.use_cassette("name_of_cassette") do` group:
+          ```ruby
+            VCR.use_cassette("propublica_search_by_last_name") do
+
+            end
+          ```
+          - this allows you to name the cassette whatever you want
+      2. Add `, :vcr` to the test between `it` and `do`
+          - this will automatically name the cassette
+          - you must add this line to the `rails_helper.rb` file: `config.configure_rspec_metadata!` (inside the VCR.configure block)
+
+### JSON API Serializer
+  - How to Install:
+    1. Add to Gemfile: `gem "jsonapi-serializer"` (add it to the bottom, outside of any groups)
+  - How to use it:
+    - run a command to create the new serializer:
+    - ex: `rails g serializer Movie name year` will create `app/serializers/movie_serializer.rb`
+  - Example:
+    ```ruby
+    class ErrorSerializer
+      def initialize(error_object)
+        @error_object = error_object
+      end
+  
+      def serialize_json
+        {
+          errors: [
+            {
+              status: @error_object.status_code.to_s,
+              title: @error_object.message
+            }
+          ]
+        }
+      end
+    end
+    ```
+
+### bcrypt
+  - encrypts passwords (one-way) so they can be compared against, but never decrypted
+  - How to Install:
+    1. Add to Gemfile: `gem "bcrypt"` (add it to the bottom, outside of any groups)
+  - How to Use:
+    - Add `has_secure_password` to user model (is this considered a validation?)
+    - update user table to include password_digest field (rails g migration ... )
+    - run `user.authenticate(params[:password])` to authenticate (see if the password, when hashed, matches the secure password stored in the database)
+      - Test:
+        ```ruby
+        it "has secure password" do
+          user = User.create!(name: 'Meg', email: 'meg@gmail.com', password: 'password123', password_confirmation: 'password123')
+
+          expect(user).to_not have_attribute(:password)
+          expect(user.password_digest).to_not eq('password123')
+        end
+      ```
     
